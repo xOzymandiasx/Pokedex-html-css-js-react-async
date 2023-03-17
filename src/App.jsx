@@ -8,8 +8,8 @@ function App() {
   const [pokedex, setPokedex] = useState([]);
   let effectRan = false;
 
-  const pokeUrl = (value) =>
-    `https://pokeapi.co/api/v2/pokemon/?offset=${value}&limit=20`;
+  const pokeUrl = (page, limit=20) =>
+    `https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=${limit}`;
 
   const getAllPokemons = async () => {
     const { data } = await axios.get(pokeUrl(0));
