@@ -3,13 +3,14 @@ import axios from "axios";
 import "./App.css";
 import PokeCardList from "./components/PokeCardList";
 import PokeForm from "./components/PokeForm";
+// import PaginaPrueba from "./components/PaginaPrueba";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
   let effectRan = false;
 
-  const pokeUrl = (page, limit=20) =>
-    `https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=${limit}`;
+  const pokeUrl = (page) =>
+    `https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=20`;
 
   const getAllPokemons = async () => {
     const { data } = await axios.get(pokeUrl(0));
@@ -35,6 +36,7 @@ function App() {
       <h1>Pokedex</h1>
       <PokeForm />
       <PokeCardList pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl}/>
+      {/* <PaginaPrueba pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl}/> */}
     </div>
   );
 }

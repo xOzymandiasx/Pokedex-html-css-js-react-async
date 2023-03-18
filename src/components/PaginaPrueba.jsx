@@ -4,7 +4,7 @@ import "../styles/pokeCardList.css";
 import axios from 'axios';
 import Loader from './Loader';
 
-const PokeCardList = ({pokedex, setPokedex, pokeUrl}) => {
+const PaginaPrueba = ({pokedex, setPokedex, pokeUrl}) => {
 
   const [pokePage, setPokePage] = useState(0);
   const [loader, setLoader] = useState(false);
@@ -34,10 +34,13 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl}) => {
   return (
     <div>
       {loader ? <Loader /> : pokedex.map(poke =><CardList pokedex={poke}/>)}
-      {pokePage > 0 && <button onClick={changePage}>Previus</button>}
-      <button onClick={changePage}>Next</button>    
+      {/* {pokedex.map(poke =><CardList pokedex={poke}/>)} */}
+      <div>       
+        {pokePage > 0 && <button onClick={changePage}>Previus</button>}
+        {pokePage < 140 && <button onClick={changePage}>Next</button>}    
+      </div>
     </div>
   )
 }
 
-export default PokeCardList;
+export default PaginaPrueba;
