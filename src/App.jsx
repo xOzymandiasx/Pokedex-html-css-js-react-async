@@ -9,11 +9,11 @@ function App() {
   const [pokedex, setPokedex] = useState([]);
   let effectRan = false;
 
-  const pokeUrl = (page) =>
+  const pokeUrl = (page=0) =>
     `https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=20`;
 
   const getAllPokemons = async () => {
-    const { data } = await axios.get(pokeUrl(0));
+    const { data } = await axios.get(pokeUrl());
     let newPokePage = [];
     for (let poke of data.results) {
       const { data } = await axios.get(poke.url);
@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <h1>Pokedex</h1>
-      <PokeForm />
+      <PokeForm setPokedex={setPokedex} getAllPokemons= {getAllPokemons}/>
       <PokeCardList pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl}/>
       {/* <PaginaPrueba pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl}/> */}
     </div>

@@ -20,7 +20,6 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl}) => {
       setPokePage(pokePage + 20);
     } 
     const { data } = await axios.get(pokeUrl(actualPage));
-    console.log(data.results);
     let newPokePage = [];
     for (let poke of data.results) {
       const { data } = await axios.get(poke.url);
@@ -32,11 +31,15 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl}) => {
   }
 
   return (
+    <>
     <div>
       {loader ? <Loader /> : pokedex.map(poke =><CardList pokedex={poke}/>)}
-      {pokePage > 0 && <button onClick={changePage}>Previus</button>}
-      <button onClick={changePage}>Next</button>    
     </div>
+    <div>
+      {pokePage > 0 && <button onClick={changePage}>Previus</button>}
+      {pokePage < 140 && <button onClick={changePage}>Next</button>}    
+    </div>
+    </>
   )
 }
 
