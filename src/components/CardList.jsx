@@ -23,15 +23,15 @@ const CardList = ({ pokedex }) => {
   };
 
   return (
-    // <ul>
-      <li style={{backgroundColor:typeColor[`${types[0].type.name}`]}}>
+      <li style={{backgroundImage:`linear-gradient(${typeColor[types[0].type.name]}, whitesmoke 75%)`,
+      border: `1px solid ${typeColor[types[0].type.name]}`,
+      }}>
         <img src={sprites.front_default} alt={name} />
-        <p>{name}</p>
-        <div>
-          {types.map(type => <span>{type.type.name}</span>)}
+        <h2>{name}</h2>
+        <div className="type-container">
+          {types.map(type => <span style={{backgroundColor: typeColor[`${types[0].type.name}`]}}>{type.type.name}</span>)}
         </div>
       </li>
-    // </ul>
   );
 };
 

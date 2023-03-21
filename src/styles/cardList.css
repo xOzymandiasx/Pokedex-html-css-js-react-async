@@ -15,7 +15,25 @@ li {
   list-style-type: none;
   justify-content: center;
   width: 12rem;
-  height: 15rem;
+  height: 14rem;
   border-radius: 40px;
   margin: 0.2rem;
+}
+
+h2,
+span {
+  text-transform: capitalize;
+}
+
+.type-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+span {
+  color: white;
+  width: 4.1rem;
+  border-radius: 50px;
+  text-align: center;
 }
