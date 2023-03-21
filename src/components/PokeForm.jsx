@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import "../styles/pokeForm.css"
 
 const PokeForm = ({setPokedex, getAllPokemons}) => {
 
