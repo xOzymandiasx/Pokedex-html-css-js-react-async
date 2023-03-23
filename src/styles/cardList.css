@@ -3,7 +3,7 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-height: 37vh;
+  min-height: 31rem;
   margin: 0.5rem;
   padding: 0.5rem;
 }
@@ -23,6 +23,11 @@ li {
 h2,
 span {
   text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+
+h2 {
+  font-size: 1rem;
 }
 
 .type-container {
@@ -32,6 +37,7 @@ span {
 }
 
 span {
+  font-size: 0.5rem;
   color: white;
   width: 4.1rem;
   border-radius: 50px;

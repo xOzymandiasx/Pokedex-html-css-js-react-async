@@ -1,1 +1,28 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+}
 
+p {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+button {
+  font-family: "poke-font", sans-serif;
+  color: yellow;
+  background-color: red;
+  letter-spacing: 0.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 6rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border: none;
+  transition: all ease-in-out 0.2s;
+}
+
+button:hover {
+  color: red;
+  background-color: yellow;
+}

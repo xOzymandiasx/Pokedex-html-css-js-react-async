@@ -4,19 +4,17 @@ import "../styles/pokeCardList.css";
 import axios from 'axios';
 import Loader from './Loader';
 
-const PokeCardList = ({pokedex, setPokedex, pokeUrl, loader, setLoader}) => {
-
-  const [pokePage, setPokePage] = useState(0);
+const PokeCardList = ({pokedex, setPokedex, pokeUrl, loader, setLoader, pokePage, setPokePage, searching}) => {
 
   const changePage = async (e) => {
     setLoader(true);
     let actualPage = pokePage;
     if (e.target.innerHTML === "Previus") {
-      actualPage -= 20;
-      setPokePage(pokePage - 20);
+      actualPage -= 12;
+      setPokePage(pokePage - 12);
     } else {
-      actualPage += 20;
-      setPokePage(pokePage + 20);
+      actualPage += 12;
+      setPokePage(pokePage + 12);
     } 
     const { data } = await axios.get(pokeUrl(actualPage));
     let newPokePage = [];
@@ -33,12 +31,12 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl, loader, setLoader}) => {
     <>
     <ul>
       {loader === false && pokedex.length === 0  
-      ? <span>No se encontraron resultados</span> 
+      ? <p>No se encontraron resultados</p> 
       : loader ? <Loader /> : pokedex.map(poke =><CardList pokedex={poke}/>)}
     </ul>
-    <div>
-      {pokePage > 0 && <button onClick={changePage}>Previus</button>}
-      {pokePage < 140 && <button onClick={changePage}>Next</button>}    
+    <div className='button-container'>
+      {searching === false && pokePage > 0 && <button onClick={changePage}>Previus</button>}      
+      {searching === false && pokePage < 140 && <button onClick={changePage}>Next</button>}    
     </div>
     </>
   )
