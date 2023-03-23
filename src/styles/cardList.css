@@ -43,5 +43,6 @@ span {
   font-size: 0.5rem;
   color: white;
   width: 4.1rem;
+  min-height: 1rem;
   border-radius: 50px;
 }
