@@ -9,6 +9,7 @@ input {
   text-align: center;
   height: 2.5rem;
   width: 25rem;
+  padding: 0.5rem;
   border-radius: 25px;
   margin: 0.5rem;
   border: none;
