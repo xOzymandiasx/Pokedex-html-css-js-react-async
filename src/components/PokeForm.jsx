@@ -28,7 +28,7 @@ const PokeForm = ({setPokedex, getAllPokemons, setPokePage, setSearching}) => {
   return (
     <form>
       <label htmlFor="poke">
-        <input type="text" name="poke" id="poke" placeholder="Pokesearch" onChange={handleChange}/>
+        <input type="text" name="poke" id="poke" placeholder="Pokesearch (Only 151 originals)" onChange={handleChange}/>
       </label>
     </form>
   );
