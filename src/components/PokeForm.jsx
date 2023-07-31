@@ -20,8 +20,8 @@ const PokeForm = ({setPokedex, getAllPokemons, setPokePage, setSearching}) => {
       if (poke.name.startsWith(e.target.value.trim().toLowerCase())) {
         const {data} = await axios.get(poke.url);
         pokeSearch.push(data);
-      }
-    }
+      };
+    };
     setPokedex(pokeSearch);
   };
 

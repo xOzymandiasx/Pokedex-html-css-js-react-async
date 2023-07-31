@@ -18,6 +18,8 @@
 .main-div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -30,6 +32,7 @@ h1 {
   border-radius: 50px;
   margin: 0.5rem;
   user-select: none;
+  width: 90%;
 }
 
 @media screen and (max-width: 720px) {

@@ -1,0 +1,51 @@
+import "../styles/pokeCardDetail.css"
+
+const PokeCardDetail = ({ pokedex }) => {
+  const { name, sprites, types, moves, stats, weight } = pokedex[0];
+  const typeColor = {
+    bug: "#26de81",
+    dragon: "#ffeaa7",
+    electric: "#fed330",
+    fairy: "#FF0069",
+    fighting: "#30336b",
+    fire: "#f0932b",
+    flying: "#81ecec",
+    grass: "#00b894",
+    ground: "#EFB549",
+    ghost: "#a55eea",
+    ice: "#74b9ff",
+    normal: "#95afc0",
+    poison: "#6c5ce7",
+    psychic: "#a29bfe",
+    rock: "#2d3436",
+    water: "#0190FF",
+  };
+  const liStyles = {
+    backgroundImage: `linear-gradient(${
+      typeColor[types[0].type.name]
+    }, whitesmoke 75%)`,
+    border: `1px solid ${typeColor[types[0].type.name]}`,
+  };
+
+  return (
+    <div style={liStyles} className="main-container">
+      <div>
+        <img src={sprites.other.dream_world.front_default} alt={name} />
+        <h3>{name}</h3>
+      </div>
+      <div>
+        type:
+        {types.map((type, index) => (
+          <span key={index}>
+            {type.type.name}
+          </span>
+        ))}
+        <p>moves: {moves[0].move.name} {moves[1].move.name}</p>
+        <p>stats: hp: {stats[0].base_stat} attack: {stats[1].base_stat} defense: {stats[2].base_stat}</p>
+        <p>weight: {weight}</p>
+      </div>
+    </div>
+  );
+};
+
+export default PokeCardDetail;

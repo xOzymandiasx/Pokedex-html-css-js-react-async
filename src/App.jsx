@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import PokeCardList from "./components/PokeCardList";
 import PokeForm from "./components/PokeForm";
+import PokeCardDetail from "./components/PokeCardDetail";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
@@ -40,7 +41,11 @@ function App() {
     <div className="main-div">
       <h1>Pokedex</h1>
       <PokeForm setPokedex={setPokedex} getAllPokemons= {getAllPokemons} setPokePage={setPokePage} setSearching={setSearching}/>
-      <PokeCardList pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl} loader={loader} setLoader={setLoader} pokePage={pokePage} setPokePage={setPokePage} searching={searching}/>
+      {pokedex.length === 1 
+       ? <PokeCardDetail pokedex={pokedex}/>
+       : <PokeCardList pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl} loader={loader} setLoader={setLoader} pokePage={pokePage} setPokePage={setPokePage} searching={searching}/>
+      }
+      <footer><h5>Realizando cambios, sepa disculpar</h5></footer>
     </div>
   );
 }

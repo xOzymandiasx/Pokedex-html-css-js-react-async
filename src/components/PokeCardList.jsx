@@ -25,21 +25,21 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl, loader, setLoader, pokePage
     }
     setPokedex(newPokePage);
     setLoader(false);
-  }
+  };
 
   return (
     <>
     <ul>
       {loader === false && pokedex.length === 0  
       ? <p>No se encontraron resultados</p> 
-      : loader ? <Loader /> : pokedex.map(poke =><CardList pokedex={poke}/>)}
+      : loader ? <Loader /> : pokedex.map((poke, index) => <CardList key={index} pokedex={poke}/>)}
     </ul>
     <div className='button-container'>
       {searching === false && pokePage > 0 && <button onClick={changePage}>Previus</button>}      
       {searching === false && pokePage < 140 && <button onClick={changePage}>Next</button>}    
     </div>
     </>
-  )
-}
+  );
+};
 
 export default PokeCardList;
