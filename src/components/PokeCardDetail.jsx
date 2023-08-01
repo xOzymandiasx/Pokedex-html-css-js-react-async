@@ -31,18 +31,19 @@ const PokeCardDetail = ({ pokedex }) => {
     <div style={liStyles} className="main-container">
       <div>
         <img src={sprites.other.dream_world.front_default} alt={name} />
-        <h3>{name}</h3>
+        <h3 className="poke-name">{name}</h3>
       </div>
-      <div>
-        type:
-        {types.map((type, index) => (
-          <span key={index}>
-            {type.type.name}
-          </span>
-        ))}
-        <p>moves: {moves[0].move.name} {moves[1].move.name}</p>
-        <p>stats: hp: {stats[0].base_stat} attack: {stats[1].base_stat} defense: {stats[2].base_stat}</p>
-        <p>weight: {weight}</p>
+      <div className="card-detail">
+        <h4>Type</h4>
+        <p>
+          {types.map((type, index) => <span key={index} style={{backgroundColor: typeColor[`${type.type.name}`]}}>{type.type.name} </span>)}
+        </p>
+        <h4>Moves</h4>  
+        <p>{moves[0].move.name} {moves[1].move.name}</p>
+        <h4>Stats</h4>
+        <p>hp: {stats[0].base_stat} attack: {stats[1].base_stat} defense: {stats[2].base_stat}</p>
+        <h4>Weigth</h4>
+        <p>{weight}</p>
       </div>
     </div>
   );

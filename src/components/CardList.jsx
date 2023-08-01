@@ -29,7 +29,7 @@ const CardList = ({ pokedex }) => {
         <img src={sprites.front_default} alt={name} />
         <h2>{name}</h2>
         <div className="type-container">
-          {types.map((type, index) => <span key={index} style={{backgroundColor: typeColor[`${types[0].type.name}`]}}>{type.type.name}</span>)}
+          {types.map((type, index) => <span key={index} className="type-span" style={{backgroundColor: typeColor[`${type.type.name}`]}}>{type.type.name}</span>)}
         </div>
       </li>
   );

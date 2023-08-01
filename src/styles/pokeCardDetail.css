@@ -4,8 +4,19 @@
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  flex-wrap: wrap;
+  width: 55%;
+  min-width: 30rem;
 }
 
-h3 {
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.poke-name {
   text-align: center;
+  text-transform: capitalize;
 }
