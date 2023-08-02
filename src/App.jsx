@@ -45,7 +45,6 @@ function App() {
        ? <PokeCardDetail pokedex={pokedex}/>
        : <PokeCardList pokedex={pokedex} setPokedex={setPokedex} pokeUrl={pokeUrl} loader={loader} setLoader={setLoader} pokePage={pokePage} setPokePage={setPokePage} searching={searching}/>
       }
-      <footer><h5>Realizando cambios, sepa disculpar</h5></footer>
     </div>
   );
 }

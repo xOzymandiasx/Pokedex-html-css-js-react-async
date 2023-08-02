@@ -2,11 +2,13 @@
   display: flex;
   min-height: 28rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 25px;
   flex-wrap: wrap;
   width: 55%;
-  min-width: 30rem;
+  min-width: 25rem;
+  padding: 1.5rem 0rem;
+  margin: 0.5rem;
 }
 
 .card-detail {
@@ -17,6 +19,41 @@
 }
 
 .poke-name {
+  font-size: 1.5rem;
   text-align: center;
   text-transform: capitalize;
+}
+
+.types-p {
+  margin-left: 1.2rem;
+}
+
+.type-span-card-detail, .span-moves, .hp-span, .attack-span, .defense-span, .weight-span{
+  border-radius: 25px;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+}
+
+.type-span-card-detail {
+  margin-right: 1rem;
+}
+
+.span-moves {
+  background-color: #f44865;
+}
+
+.hp-span {
+  background-color: #44c144;
+}
+
+.attack-span {
+  background-color: #f02626;
+}
+
+.defense-span {
+  background-color: #3333f1;
+}
+
+.weight-span {
+  background-color: #5d4141;
 }
