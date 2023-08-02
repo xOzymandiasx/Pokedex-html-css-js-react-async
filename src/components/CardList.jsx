@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/cardList.css";
 
-const CardList = ({ pokedex }) => {
+const CardList = ({ pokedex, setPokedex }) => {
   const { name, sprites, types } = pokedex;
   const typeColor = {
     bug: "#26de81",
@@ -21,11 +21,16 @@ const CardList = ({ pokedex }) => {
     rock: "#2d3436",
     water: "#0190FF",
   };
+  const liStyle = {backgroundImage:`linear-gradient(${typeColor[types[0].type.name]}, whitesmoke 75%)`,
+  border: `1px solid ${typeColor[types[0].type.name]}`,
+  };
+
+  const handleClick = () => {
+    setPokedex([pokedex]);
+  };
 
   return (
-      <li style={{backgroundImage:`linear-gradient(${typeColor[types[0].type.name]}, whitesmoke 75%)`,
-      border: `1px solid ${typeColor[types[0].type.name]}`,
-      }}>
+      <li onClick={handleClick} style={liStyle}>
         <img src={sprites.front_default} alt={name} />
         <h2>{name}</h2>
         <div className="type-container">

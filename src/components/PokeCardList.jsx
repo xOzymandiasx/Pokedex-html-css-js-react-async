@@ -32,7 +32,7 @@ const PokeCardList = ({pokedex, setPokedex, pokeUrl, loader, setLoader, pokePage
     <ul>
       {loader === false && pokedex.length === 0  
       ? <p>No se encontraron resultados</p> 
-      : loader ? <Loader /> : pokedex.map((poke, index) => <CardList key={index} pokedex={poke}/>)}
+      : loader ? <Loader /> : pokedex.map((poke, index) => <CardList key={index} pokedex={poke} setPokedex={setPokedex}/>)}
     </ul>
     <div className='button-container'>
       {searching === false && pokePage > 0 && <button onClick={changePage}>Previus</button>}      

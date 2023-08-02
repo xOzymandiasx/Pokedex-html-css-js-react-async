@@ -18,6 +18,7 @@ li {
   height: 14rem;
   border-radius: 40px;
   margin: 0.2rem;
+  cursor: pointer;
 }
 
 h2,
