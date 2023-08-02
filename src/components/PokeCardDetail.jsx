@@ -29,6 +29,7 @@ const PokeCardDetail = ({ pokedex }) => {
 
   return (
     <div style={liStyles} className="main-container">
+    <a href="" className="close-button"><img src="/imgs/close.svg" alt="close-button"/></a>
       <div>
         <img src={sprites.other.dream_world.front_default} alt={name} />
         <h3 className="poke-name">{name}</h3>
